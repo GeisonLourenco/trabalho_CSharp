@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SuplementosWPF.DAO;
-using SuplementosWPF.Models;
+using SuplementosWPF.Model;
 
 namespace SuplementosWPF.DAO
 {
@@ -70,7 +70,7 @@ namespace SuplementosWPF.DAO
                 },
             };
                 clientes.ForEach(x => ClienteDAO.AdicionarCliente(x));
-                funcionarios.ForEach(x => VendedorDAO.AdicionarFuncionario(x));
+                funcionarios.ForEach(x => FuncionarioDAO.AdicionarFuncionario(x));
                 suplementos.ForEach(x => SuplementoDAO.AdicionarSuplemento(x));
             }
     }

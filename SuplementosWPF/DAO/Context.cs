@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SuplementosWPF.Models;
+using SuplementosWPF.Model;
 
 namespace SuplementosWPF.DAO
 {
@@ -24,5 +24,4 @@ namespace SuplementosWPF.DAO
 
         }
     }
-}
-}
+

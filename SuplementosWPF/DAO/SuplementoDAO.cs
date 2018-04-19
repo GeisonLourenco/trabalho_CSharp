@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SuplementosWPF.Models;
+using SuplementosWPF.Model;
 
 namespace SuplementosWPF.DAO
 {
@@ -16,7 +16,7 @@ namespace SuplementosWPF.DAO
         {
             try
             {
-                ctx.Produtos.Add(suplemento);
+                ctx.Suplementos.Add(suplemento);
                 ctx.SaveChanges();
                 return true;
             }
@@ -34,7 +34,7 @@ namespace SuplementosWPF.DAO
 
         public static Suplemento BuscarSuplementoPorId(int suplementoId)
         {
-            return ctx.Suplementos.FirstOrDefault(x => x.SuplementoId.Equals(SuplementoId));
+            return ctx.Suplementos.FirstOrDefault(x => x.SuplementoId.Equals(suplementoId));
         }
 
         public static List<Suplemento> RetornarLista()

@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuplementosWPF.Models
+namespace SuplementosWPF.Model
 {
     [Table("Suplemento")]
     public class Suplemento
     {
         [Key]
-        public int ProdutoId { get; set; }
+        public int SuplementoId { get; set; }
         public string Nome { get; set; }
         public double Preco { get; set; }
         public double Markup { get; set; }

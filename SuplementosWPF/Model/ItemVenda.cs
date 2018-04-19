@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuplementosWPF.Models
+namespace SuplementosWPF.Model
 {
     [Table("ItemVenda")]
     class ItemVenda
