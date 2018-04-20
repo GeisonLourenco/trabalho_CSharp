@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -61,10 +63,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DAO\DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Banco.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="View\frmCadastrarVenda.xaml.cs">
+      <DependentUpon>frmCadastrarVenda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RelatorioVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RelatorioVendas.Designer.cs">
+      <DependentUpon>RelatorioVendas.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmCadastrarCliente.xaml.cs">
       <DependentUpon>frmCadastrarCliente.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\frmprincipal.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -80,11 +98,15 @@
     <Compile Include="DAO\Singleton.cs" />
     <Compile Include="DAO\SuplementoDAO.cs" />
     <Compile Include="DAO\VendaDAO.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="View\frmprincipal.xaml.cs">
+      <DependentUpon>frmprincipal.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\frmCadastrarCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\frmCadastrarVenda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -113,6 +135,20 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\RelatorioVendas.resx">
+      <DependentUpon>RelatorioVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DAO\DataSet.xsc">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DAO\DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAO\DataSet.xss">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
