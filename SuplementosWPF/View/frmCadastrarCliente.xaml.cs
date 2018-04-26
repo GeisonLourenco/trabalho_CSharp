@@ -21,6 +21,7 @@ namespace SuplementosWPF.View
     /// </summary>
     public partial class frmCadastrarCliente : Window
     {
+        private static Context context = Singleton.Instance.Context;
         private Cliente c;
         public frmCadastrarCliente()
         {
@@ -61,6 +62,20 @@ namespace SuplementosWPF.View
             btnGravarCliente.IsEnabled = false;
             btnAlterar.IsEnabled = true;
 
+            if (txtNome.Text.Trim().Count() > 0)
+            {
+                try
+                {
+                    var consulta = from c in context.Clientes
+                                   where c.Nome.Contains(txtNome.Text)
+                                   select c;
+                    dgDados.ItemsSource = consulta.ToList();
+                }
+            catch
+                {
+
+                }
+            }
             if (!string.IsNullOrEmpty(txtCpf.Text))
             {
                 c = new Cliente
@@ -117,5 +132,20 @@ namespace SuplementosWPF.View
                     MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
+        private void btnRemover_Click(object sender, RoutedEventArgs e)
+        {
+            c.Nome = txtNome.Text;
+            c.CPF = txtCpf.Text;
+            if (ClienteDAO.RemoverCliente(c))
+            {
+                MessageBox.Show("Contato removido com sucesso!", "Suplementos WPF",
+                MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
     }
 }
+
+
+   
